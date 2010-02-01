@@ -1,3 +1,5 @@
+# code from the book "programming collective intelligence"
+
 from math import sqrt
 
 def transformPrefs(prefs):
