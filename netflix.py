@@ -81,6 +81,8 @@ def calculateSimilarItems(prefs, n=10):
     itemPrefs=prefs#transformPrefs(prefs)
     c=0
     for item in itemPrefs:
+        print item
+        #print 'calculating similarities for ' + item[0] + '...'
         c+=1
         if c%100==0: 
             print "%d / %d" % (c, len(itemPrefs))
@@ -89,6 +91,7 @@ def calculateSimilarItems(prefs, n=10):
     return result
     
 def getRecommendedItems(prefs, itemMatch, user):
+    prefs = transformPrefs(prefs) # because we have an inverse set to start with
     userRatings=prefs[user]
     scores={}
     totalSim={}
